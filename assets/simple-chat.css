@@ -1,0 +1,74 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+
+
+#ChatRoom {
+	padding-bottom: 70px;
+	scroll-behavior: smooth;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+#ChatRoom .message {
+	margin: 10px 20% 10px 10px;
+	background: #eee;
+	border-radius: 5px;
+	padding: 5px;
+}
+#ChatRoom .message[data-admin=yes] {
+	background: #444;
+	color: #fff;
+}
+#ChatRoom .message span {
+	font-weight: bold;
+	margin-right: 5px;
+}
+
+#ChatMessageBox {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+
+	padding: 10px;
+	background: #eee;
+	overflow: hidden;
+
+	width: 100%;
+}
+
+#ChatMessageBox textarea {
+	border-radius: 10px 0 0 10px;
+	resize: none;
+	border: none;
+	padding: 10px;
+	width: 80%;
+	height: 50px;
+	float: left;
+}
+#ChatMessageBox button {
+	border-radius: 0 10px 10px 0;
+	border: none;
+	padding: 10px;
+	max-width: 20%;
+	float: left;
+	height: 50px;
+	cursor: pointer;
+	background: #ccc;
+}
+#ChatMessageBox button:hover {
+	background: #ddd;
+}

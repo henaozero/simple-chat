@@ -12,7 +12,7 @@
 </div>
 <div id="ChatMessageBox">
 	<textarea id="ChatMessage" maxlength="<?= ConstSettings::messageMaxLength ?>"></textarea>
-	<button id="ChatSend">Envíar</button>
+	<button id="ChatSend">Enviar</button>
 </div>
 
 <style>
@@ -29,15 +29,23 @@
 <script>
 	window.addEventListener('DOMContentLoaded', function() {
 		document.getElementById('ChatSend').addEventListener('click', sendMessage, false);
+		window.addEventListener('resize', scrollChatToBottom, false);
 		getMessages();
 	}, false);
+
+	function scrollChatToBottom()
+	{
+		var chatRoomBox = document.getElementById('ChatRoom');
+
+		chatRoomBox.scrollTop = chatRoomBox.scrollHeight;
+	}
 
 	function drawMessages(html) {
 		var chatRoomBox = document.getElementById('ChatRoom');
 
 		chatRoomBox.innerHTML = html;
 
-		chatRoomBox.scrollTop = chatRoomBox.scrollHeight;
+		scrollChatToBottom();
 	}
 
 	function getMessages() {

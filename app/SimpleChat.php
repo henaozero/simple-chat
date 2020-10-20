@@ -108,7 +108,7 @@ class SimpleChat
 
 	private function getRoomFilename($room)
 	{
-		$filename = 'rooms/' . trim(strtolower(preg_replace("/[^a-zA-Z0-9]+/", '', $room))) . '.txt';
+		$filename = 'rooms/' . trim(strtolower(preg_replace("/[^a-zA-Z0-9]+/", '', $room))) . '.html';
 
 		if(!file_exists($filename)) {
 			file_put_contents($filename, '');

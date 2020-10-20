@@ -33,6 +33,8 @@
 		getMessages();
 	}, false);
 
+	var currentHtml = '';
+
 	function scrollChatToBottom()
 	{
 		var chatRoomBox = document.getElementById('ChatRoom');
@@ -43,9 +45,11 @@
 	function drawMessages(html) {
 		var chatRoomBox = document.getElementById('ChatRoom');
 
-		chatRoomBox.innerHTML = html;
-
-		scrollChatToBottom();
+		if(currentHtml !== html) {
+			chatRoomBox.innerHTML = html;
+			currentHtml = html;
+			scrollChatToBottom();
+		}
 	}
 
 	function getMessages() {

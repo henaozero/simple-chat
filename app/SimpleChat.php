@@ -3,7 +3,10 @@
  * @author Ikaro Henao
  */
 
-require_once 'settings.php';
+if(file_exists('settings.php'))
+	require_once 'settings.php';
+else
+	require_once 'defaults/settings.php';
 
 class SimpleChat
 {
